@@ -9,5 +9,11 @@ variable "ec2_inst_type" {
     description = "Instance_type"
     type = string
     default = "t2.micro" 
+ }
+
+variable "tag_name" {
+    description = "tag_name"
+    type = string
+    default = "dev-ec2-instance"
   
 }

@@ -1,6 +1,9 @@
 resource "aws_instance" "name" {
 
-ami = var.ec2_ami
-instance_type = var.ec2_inst_type
-  
+ami = "ami-0a70b9d193ae8a799"
+instance_type = "t2.micro"
+ tags = {
+    
+    Name = "My-ec2-instance"
+ }  
 }
