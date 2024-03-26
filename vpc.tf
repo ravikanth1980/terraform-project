@@ -1,21 +1,21 @@
-# ## create a VPC for my dev environment 
+## create a VPC for my dev environment 
 
-# resource "aws_vpc" "dev_vpc" {
+resource "aws_vpc" "dev_vpc" {
 
-#   cidr_block = "10.0.0.0/16"
-#   tags = {
-#     Name = "dev_vpc"
-#   }
-# }
-# ## Public subnet for my dev_vpc
+  cidr_block = "10.0.0.0/16"
+  tags = {
+    Name = "dev_vpc"
+  }
+}
+## Public subnet for my dev_vpc
 
-# resource "aws_subnet" "dev_public_subnet" {
-#   vpc_id     = aws_vpc.dev_vpc.id
-#   cidr_block = "10.0.1.0/24"
-#   tags = {
-#     Name = "Public Subnet"
-#   }
-# }
+resource "aws_subnet" "dev_public_subnet" {
+  vpc_id     = aws_vpc.dev_vpc.id
+  cidr_block = "10.0.1.0/24"
+  tags = {
+    Name = "Public Subnet"
+  }
+}
 
 # ## Private Subnet for dev_vpc
 
@@ -59,9 +59,9 @@
 # ## Public subnet association to dev route table
 
 # resource "aws_route_table_association" "dev_public-server" {
-#   subnet_id      = aws_subnet.dev_public_subnet.id
-#   route_table_id = aws_route_table.dev_route.id
-# }
+#    subnet_id      = aws_subnet.dev_public_subnet.id
+#    route_table_id = aws_route_table.dev_route.id
+#  }
 
 # ## Elastic IP for Natgateway
 
