@@ -15,5 +15,5 @@ variable "ec2_inst_type" {
 # variable "vpc_subnet" {
 #     description = "vpc_public_subnet"
 #     default = data.aws_subnet.dev_public_subnet.cidr_block
-  
+
 # }

@@ -1,3 +1,4 @@
+
 # terraform {
 #   backend "s3" {
 #     bucket = "sercret-bucket"
@@ -10,7 +11,7 @@
 terraform {
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "5.42.0"
     }
   }
@@ -19,4 +20,6 @@ terraform {
 provider "aws" {
   region = "us-west-2"
 }
+
+
 
