@@ -1,0 +1,9 @@
+# create a VPC for my dev environment 
+
+resource "aws_vpc" "dev_vpc" {
+
+  cidr_block = var.dev_sg_cidr_block
+  tags = {
+    Name = var.dev_vpc_name
+  }
+}
