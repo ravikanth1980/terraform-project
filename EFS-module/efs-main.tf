@@ -8,13 +8,11 @@ resource "aws_efs_file_system" "efs"{
       Name = var.efs-name
     }
 }
-
 ## Create a EFS  mount target
-
 resource "aws_efs_mount_target" "efs-target" {
-    count = length(var.subnet-ids)
+    #count = length(var.subnet-ids)
     file_system_id = aws_efs_file_system.efs.id
-    subnet_id = var.subnet-ids[count.index]
+    subnet_id = var.subnet-ids
 }
 
 ## Create a EFS Security group 
@@ -42,4 +40,3 @@ resource "aws_security_group" "efs-sg" {
   }
     
   }
-
