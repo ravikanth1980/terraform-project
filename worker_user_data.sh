@@ -71,13 +71,13 @@ sudo dnf install -y kubelet-1.28.2 kubeadm-1.28.2 kubectl-1.28.2 --disableexclud
 sudo systemctl enable kubelet
 sudo systemctl start kubelet
 
-#Create a control-plane Master with kubeadm
-kubeadm init --pod-network-cidr=10.244.0.0/16
+# #Create a control-plane Master with kubeadm
+# kubeadm init --pod-network-cidr=10.244.0.0/16
 
-#To start using your cluster
-mkdir -p $HOME/.kube
-cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-chown $(id -u):$(id -g) $HOME/.kube/config
+# #To start using your cluster
+# mkdir -p $HOME/.kube
+# cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+# chown $(id -u):$(id -g) $HOME/.kube/config
 
 #Install Calico Pod Network Add-on [only on Master node]
 sudo curl https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/canal.yaml -O
